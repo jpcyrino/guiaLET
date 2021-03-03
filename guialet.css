@@ -54,20 +54,16 @@ nav li a {
   color: #f9f9f9;
 }
 
-#indice-rapido {
-  display: none;
-}
-
 article {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   background-color: #f9f9f9;
   padding: 3rem;
 }
 
 article h1 {
-  font-family: font-family: 'Shadows Into Light', cursive;
-  font-size: 3rem;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 4rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -94,17 +90,33 @@ article a:hover {
 
 article ol li {
   list-style: decimal;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
 article ul li {
   list-style: circle;
-  margin-left: 3rem;
+  margin-left: 1rem;
 
 }
 
 footer {
-  padding-top: 2rem;
-  background-color: #a0b3c1;
-  color: #b56357;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  background-color: #b56357;
+  color: #f9f9f9;
+  font-size: .6rem;
+}
+
+footer p {
+
+}
+
+#indice-rapido {
+
+}
+
+#autoria {
+  text-align: right;
+  padding-bottom: 5rem;
 }

@@ -3,7 +3,7 @@
   "indice" : [
     {"titulo" : "Apresentação",
      "pagina" : "/v1/0_apresentacao.html"},
-    {"parte" : "o"},
+    {"parte" : ""},
     {"titulo" : "Uma Introdução ao Estudo da História",
       "autoria" : "Ana Carolina Barbosa Pereira",
       "pagina" : "/v1/1_introducao_historia.html"},

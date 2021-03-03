@@ -19,7 +19,7 @@
   <nav>
     <!-- Menu horizontal, permitindo a navegação pelos diferentes volumes -->
     <ul id="menu-volumes">
-      <li><a href="/index.html">Sobre</a></li>
+      <li><a href="/index.html">GuiaLET</a></li>
     </ul>
   </nav>
   <section id="indice-rapido">
@@ -27,6 +27,7 @@
     </section>
   <article id="artigo">
     <!-- aqui deve aparecer o texto de cada capítulo, por padrão mostrar apresentação-->
+    <h1>GuiaLET</h1>
     <p>O GuiaLET é um projeto de extensão cujo objetivo é oferecer aos estudantes uma orientação
       quanto a leituras fundamentais para sua formação, disponível online e com acesso aberto.
       O projeto está sendo desenvolvido em parceria com a <a href="http://www.edufba.ufba.br" target="_blank">
@@ -54,7 +55,7 @@
     <!-- Rodapé, indicar informações de autoria do guiaLET e licença -->
     <p>Créditos</p>
     <ul>
-      <li>Danniel Carvalho - Corodenação Geral</li>
+      <li>Danniel Carvalho - Coordenação Geral</li>
       <li>João Paulo Lazzarini-Cyrino - Site </li>
       <li>Universidade Federal da Bahia - Instituição Executora</li>
       <li>Instituto de Letras - Unidade Executora</li>
@@ -78,6 +79,8 @@
 
     /*** Gerar Indice Rápido ***/
     function indiceRapido(jsonVolume){
+      /*** FAZER UMA BARRA COM ANTERIOR, PRÓXIMO E ÍNDICE ***/
+      /*
       var lista = "";
       jsonVolume.indice.forEach(function(i) {
         if (!('parte' in i)) {
@@ -85,6 +88,8 @@
         }
       });
       return "<ul><li><a href='' onclick='carregaVolume(\"" + volumeAtual + "\"); return false;'>Índice</a></li>" + lista + "</ul>";
+      */
+      return "";
     }
 
     /*** Preparar volume (baseado no JSON de cada volume): gerar indice rapido e pagina indice***/
