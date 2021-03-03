@@ -2,6 +2,11 @@
 <html lang="pt-br">
 <head>
   <title>GuiaLET</title>
+  <link rel="stylesheet" href="guialet.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"/>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -14,7 +19,7 @@
   <nav>
     <!-- Menu horizontal, permitindo a navegação pelos diferentes volumes -->
     <ul id="menu-volumes">
-      <li><a href="/index.html">Apresentação</a></li>
+      <li><a href="/index.html">Sobre</a></li>
     </ul>
   </nav>
   <section id="indice-rapido">
@@ -22,7 +27,6 @@
     </section>
   <article id="artigo">
     <!-- aqui deve aparecer o texto de cada capítulo, por padrão mostrar apresentação-->
-    <h1>Apresentação</h1>
     <p>O GuiaLET é um projeto de extensão cujo objetivo é oferecer aos estudantes uma orientação
       quanto a leituras fundamentais para sua formação, disponível online e com acesso aberto.
       O projeto está sendo desenvolvido em parceria com a <a href="http://www.edufba.ufba.br" target="_blank">
@@ -94,9 +98,9 @@
       var lista = "";
       jsonVolume.indice.forEach(function(i) {
         if ('parte' in i && i.parte != 'fim'){
-          lista += "<p>" + i.parte + "</p><ol>";
+          lista += "<h2>" + i.parte + "</h2><ol>";
         } else if ('titulo' in i && i.titulo == "Apresentação"){
-          lista += "<p><a href='' onclick='carregaArtigo(\"" + i.pagina + "\"); return false;'>" + i.titulo + "</a></p>";
+          lista += "<h2><a href='' onclick='carregaArtigo(\"" + i.pagina + "\"); return false;'>" + i.titulo + "</a></h2>";
         } else if ('parte' in i && i.parte == 'fim'){
           lista += "</ol>";
         } else {
