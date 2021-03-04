@@ -22,8 +22,10 @@
       <li><a href="/index.html">GuiaLET</a></li>
     </ul>
   </nav>
-  <section id="indice-rapido">
-    <!-- Um índice de cada volume deve aparecer aqui em formato retrátil -->
+  <section id="indice-rapido" style="display: none">
+    <ul>
+      <li><a href="" onclick="carregaVolume(volumeAtual); return false;">Índice</a></li>
+    </ul>
     </section>
   <article id="artigo">
     <!-- aqui deve aparecer o texto de cada capítulo, por padrão mostrar apresentação-->
@@ -64,6 +66,7 @@
   <script type="text/javascript">
     menuVolumes("json/volumes.json");
     var volumeAtual = "";
+    var artigoAtual = 0;
 
     /*** Carregar Artigo ***/
     function carregaArtigo(htmlArtigo){
@@ -77,31 +80,16 @@
       ajx.send();
     }
 
-    /*** Gerar Indice Rápido ***/
-    function indiceRapido(jsonVolume){
-      /*** FAZER UMA BARRA COM ANTERIOR, PRÓXIMO E ÍNDICE ***/
-      /*
-      var lista = "";
-      jsonVolume.indice.forEach(function(i) {
-        if (!('parte' in i)) {
-          lista += "<li><a href='' onclick='carregaArtigo(\"" + i.pagina + "\"); return false;'>" + i.titulo + "</a></li>";
-        }
-      });
-      return "<ul><li><a href='' onclick='carregaVolume(\"" + volumeAtual + "\"); return false;'>Índice</a></li>" + lista + "</ul>";
-      */
-      return "";
-    }
-
     /*** Preparar volume (baseado no JSON de cada volume): gerar indice rapido e pagina indice***/
     function preparaVolume(jsonVolume){
       /* carregar índice rápido */
-      document.getElementById("indice-rapido").innerHTML = indiceRapido(jsonVolume);
+      document.getElementById("indice-rapido").style.display = "block";
       /*** página índice ***/
 
       /* toda parte deve ser iniciada com um objeto com a propriedade parte tendo o título da parte como valor
       e finalizada com outro obejto com a propriedade parte tendo o valor 'fim' */
       var lista = "";
-      jsonVolume.indice.forEach(function(i) {
+      jsonVolume.indice.forEach(function(i,index) {
         if ('parte' in i && i.parte != 'fim'){
           lista += "<h2>" + i.parte + "</h2><ol>";
         } else if ('titulo' in i && i.titulo == "Apresentação"){
